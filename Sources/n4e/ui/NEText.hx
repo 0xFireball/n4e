@@ -13,6 +13,10 @@ class NEText extends NSprite {
 		if (TextColor == null) TextColor = Color.White;
 		// construct sprite
 		super(X, Y);
+		reRenderGraphic(Text, Size, TextColor, Font);
+	}
+
+	private function reRenderGraphic(Text:String, ?Size:Int = 16, ?TextColor:Color, ?Font:Font) {
 		// render custom graphic containing text
 		renderGraphic(Std.int(Font.width(Size, Text)) + 1, Std.int(Font.height(Size)) + 1, function (gpx) {
 			var ctx = gpx.g2;
